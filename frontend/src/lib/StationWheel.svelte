@@ -25,10 +25,12 @@ import { stationsData } from "./stationsData.js";
             />
         {/each}
 
-        <!-- <p style="position: absolute; top: 50%; left: 50%; background:red;">
-            Hello Hello Hello Hello Hello Hello Hello Hello Hello 
-            Todo add track description and make it centered not corner centered
-        </p> -->
+        <p style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -65%); width: 40%;  background:red; font-size: min(3dvw, 3dvh, 20px);">
+            Hello Hello 
+            <br>
+            Todo add track description, 
+            (Extract this component), fix centering and make font size handling better if possible
+        </p>
     </div>
 </div>
 

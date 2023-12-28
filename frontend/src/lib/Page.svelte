@@ -7,7 +7,7 @@
 
 
 
-
+<!-- Todo maybe: make page zooming in browser actually do something -->
 <main>
     <StationWheel />
 </main>
@@ -25,7 +25,7 @@
 
         min-height: 100px;
 
-        margin: 10px;
-        /* padding:10px; */
+        /* margin: 10px; */
+        padding:10px;
     }
 </style>
