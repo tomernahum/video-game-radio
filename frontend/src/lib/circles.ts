@@ -39,8 +39,11 @@ export function getPositionsAndSizeForRadioCircleWithTouchingIcons(n:number): [n
     //offset to account for image size and position being at top left corner
     positions = positions.map(([x, y]) => [x-(iconRadius), y-(iconRadius)]);
 
-    console.log(positions)
+    // console.log(positions)
 
-    const size = iconRadius*2 -0.2;
+    // const size = iconRadius*2 -0.85;
+    const size = iconRadius*2 -(iconRadius/31.14);
+
+    console.log(iconRadius, size)
     return [positions, size]
 }

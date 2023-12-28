@@ -1,9 +1,9 @@
-<script>
+<!-- <script>
 	import Page from "$lib/Page.svelte";
 
-</script>
+</script> -->
 
 
 
 
-<Page />
+<!-- <Page selectedRegion="Test1"/> -->

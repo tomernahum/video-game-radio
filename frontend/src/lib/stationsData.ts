@@ -1,19 +1,29 @@
 
 
 import nonStopPopLogo from "$lib/assets/non-stop-pop-logo.png";
+import nonStopPop2 from "$lib/assets/nonstoppop.jpg";
 import none from "$lib/assets/none.png";
+import none2 from "$lib/assets/none.jpg";
 
+
+
+export const validRegionNames = ["Test1", "Test2"] as const
+export type RegionName =  typeof validRegionNames[number]
 
 export type StationData = {
     name: string, //name acts as ID
     logo: string
 }
 
-function getTestStationsData(): StationData[] {
+
+
+
+
+function getTestStationsData(numStations:number): StationData[] {
     const out = [
         {
             name: "None",
-            logo: none,
+            logo: none2,
         },
         {
             name: "Non-Stop-Pop FM",
@@ -22,23 +32,22 @@ function getTestStationsData(): StationData[] {
     ]
 
     //filler for testing
-    for (let i = 0; i < 20; i++) {
+    for (let i = 0; i < numStations-1; i++) {
         out.push({
             name: `Non-Stop-Pop FM ${i+2}`,
-            logo: nonStopPopLogo
+            logo: nonStopPop2
         },)
     }
 
     return out
 }
 
-export function getStationsData(region="test"): StationData[] {
+export function getStationsData(region: RegionName="Test1"): StationData[] {
     switch (region) {
-        case "test":
-            return getTestStationsData()
-        case "etc":
-            return []
+        case "Test1":
+            return getTestStationsData(21)
+        case "Test2":
+            return getTestStationsData(15)
     }
-
-    return getTestStationsData()
+    return getTestStationsData(5)
 }

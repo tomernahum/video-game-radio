@@ -18,7 +18,7 @@
 
 </script>
 
-
+    
 <div class="outer">
     <div class="inner">
         <!-- <RegionSelector /> -->
@@ -53,7 +53,6 @@
         padding-bottom: 100%; /* 1:1 */
         position: relative;
 
-        background: rgb(73, 118, 255);
     }
     .inner {
         position: absolute;
