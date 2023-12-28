@@ -41,6 +41,6 @@ export function getPositionsAndSizeForRadioCircleWithTouchingIcons(n:number): [n
 
     console.log(positions)
 
-    const size = iconRadius*2
+    const size = iconRadius*2 -0.2;
     return [positions, size]
 }

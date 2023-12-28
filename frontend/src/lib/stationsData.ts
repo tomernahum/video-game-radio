@@ -5,74 +5,40 @@ import none from "$lib/assets/none.png";
 
 
 export type StationData = {
-    name: string,
+    name: string, //name acts as ID
     logo: string
 }
 
+function getTestStationsData(): StationData[] {
+    const out = [
+        {
+            name: "None",
+            logo: none,
+        },
+        {
+            name: "Non-Stop-Pop FM",
+            logo: nonStopPopLogo
+        },
+    ]
 
-//todo make into a list
-export const stationsData: Record<string, StationData> = {
-    "None": {
-        name: "None",
-        logo: none,
-    },
-    "NonStopPop": {
-        name: "Non-Stop-Pop FM",
-        logo: nonStopPopLogo
-    },
-    "NonStopPop2": {
-        name: "Non-Stop-Pop FM",
-        logo: nonStopPopLogo
-    },
-    "NonStopPop3": {
-        name: "Non-Stop-Pop FM",
-        logo: nonStopPopLogo
-    },
-
-
-
-    "NonStopPop4": {
-        name: "Non-Stop-Pop FM",
-        logo: nonStopPopLogo
-    },
-    "NonStopPop5": {
-        name: "Non-Stop-Pop FM",
-        logo: nonStopPopLogo
-    },
-    "NonStopPop6": {
-        name: "Non-Stop-Pop FM",
-        logo: nonStopPopLogo
-    },
-    "NonStopPop7": {
-        name: "Non-Stop-Pop FM",
-        logo: nonStopPopLogo
-    },
-    "NonStopPop8": {
-        name: "Non-Stop-Pop FM",
-        logo: nonStopPopLogo
-    },
-    
-    
-    "NonStopPop04": {
-        name: "Non-Stop-Pop FM",
-        logo: nonStopPopLogo
-    },
-    "NonStopPop05": {
-        name: "Non-Stop-Pop FM",
-        logo: nonStopPopLogo
-    },
-    "NonStopPop06": {
-        name: "Non-Stop-Pop FM",
-        logo: nonStopPopLogo
-    },
-    "NonStopPop07": {
-        name: "Non-Stop-Pop FM",
-        logo: nonStopPopLogo
-    },
-    "NonStopPop08": {
-        name: "Non-Stop-Pop FM",
-        logo: nonStopPopLogo
+    //filler for testing
+    for (let i = 0; i < 20; i++) {
+        out.push({
+            name: "Non-Stop-Pop FM 2",
+            logo: nonStopPopLogo
+        },)
     }
 
-    
+    return out
+}
+
+export function getStationsData(region="test"): StationData[] {
+    switch (region) {
+        case "test":
+            return getTestStationsData()
+        case "etc":
+            return []
+    }
+
+    return getTestStationsData()
 }
