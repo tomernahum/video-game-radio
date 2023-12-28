@@ -24,7 +24,7 @@ function getTestStationsData(): StationData[] {
     //filler for testing
     for (let i = 0; i < 20; i++) {
         out.push({
-            name: "Non-Stop-Pop FM 2",
+            name: `Non-Stop-Pop FM ${i+2}`,
             logo: nonStopPopLogo
         },)
     }
