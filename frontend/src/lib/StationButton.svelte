@@ -20,15 +20,18 @@
 <div 
     style="left: {posX}%; top: {posY}%; width: {size}%; height: {size}%;"
 >
-    <img src="{stationData.logo}" alt="{stationData.name}">
+    <input type="image" src="{stationData.logo}" alt="{stationData.name}" on:click={() => alert("Selected " + stationData.name)}/>
+    <!-- <img src="{stationData.logo}" alt="{stationData.name}"> -->
 </div>
 
 <style>
-    img {
+    img, input {
         width:100%;
         height: 100%;
+        border-radius: 50%;
     }
     div {
         position: absolute;
+
     }
 </style>

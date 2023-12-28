@@ -1,44 +1,48 @@
 
 <script lang="ts">
 
-    import StationIcon from "./StationIcon.svelte";
+    import StationButton from "./StationButton.svelte";
+	import { getPositionsAndSizeForRadioCircleWithTouchingIcons } from "./circles.js";
 import { stationsData } from "./stationsData.js";
 
     let selectedStation = "None";
 
-    
+    let numStations = Object.keys(stationsData).length;
+    let [pos, size] = getPositionsAndSizeForRadioCircleWithTouchingIcons(numStations)
 
 
 </script>
 
 
-<div class="test">
-    <div class="test2">
-        <StationIcon 
-            stationData={stationsData.NonStopPop} selected={selectedStation === "NonStopPop"} 
-            posX={0} posY={0}
-        />
-        <StationIcon 
-            stationData={stationsData.NonStopPop} selected={selectedStation === "NonStopPop"} 
-            posX={20} posY={20}
-        />
+<div class="outer">
+    <div class="inner">
+        <!-- Elements inside here should be positioned absolutely with values as percents -->
+        {#each Object.values(stationsData) as station, i}
+            <!-- <p>PosX: {pos[i][0]} PosY: {pos[i][1]}</p> -->
+            <StationButton 
+                stationData={station} selected={selectedStation === station.name}
+                posX={pos[i][0]} posY={pos[i][1]} size={size}
+            />
+        {/each}
 
-        <StationIcon 
-            stationData={stationsData.NonStopPop} selected={selectedStation === "NonStopPop"} 
-            posX={85} posY={85}
-        />
+        <!-- <p style="position: absolute; top: 50%; left: 50%; background:red;">
+            Hello Hello Hello Hello Hello Hello Hello Hello Hello 
+            Todo add track description and make it centered not corner centered
+        </p> -->
     </div>
 </div>
 
 
 <style>
-    .test {
+    .outer {
         height: 0;
         /* padding-bottom: 56.25%; 16:9 */
-        padding-bottom: 100%;
+        padding-bottom: 100%; /* 1:1 */
         position: relative;
+
+        background: rgb(73, 118, 255);
     }
-    .test2 {
+    .inner {
         position: absolute;
         top: 0; left: 0;
         width: 100%; height: 100%;

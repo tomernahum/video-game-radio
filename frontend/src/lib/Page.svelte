@@ -7,8 +7,8 @@
 
 
 
+
 <main>
-    <!-- <p>Hello</p> -->
     <StationWheel />
 </main>
 
@@ -17,11 +17,15 @@
 
 <style>
     main {
-        /* max-width: 1000px; */
+        /* max-width: 800px; */
         max-width: 95svh;
+        /* width:800px; */
         margin: 0 auto;
-        background-color: blue;
+        /* background-color: blue; */
 
         min-height: 100px;
+
+        margin: 10px;
+        /* padding:10px; */
     }
 </style>
