@@ -5,7 +5,7 @@
 	import RegionSelector from "./RegionSelector.svelte";
 	import StationWheel from "./StationWheel.svelte";
 
-    import { getStationsData, type RegionName } from "./stationsData.js";
+    import { getBackground, getStationsData, type RegionName } from "./stationsData.js";
 	import { browser } from "$app/environment";
 
     export let selectedRegion:RegionName;
@@ -13,12 +13,8 @@
     let stationsData = getStationsData(selectedRegion);
 
     
-    // $: {
-    //     selectedRegion;
-    //     if (browser) {
-    //         goto(`/region/${selectedRegion}`);
-    //     }
-    // }
+
+    
 </script>
 
 
@@ -30,11 +26,11 @@
 </div>
 <main>
     {#if selectedRegion === "Test1"}
-        <div class="outer" style="background: hsl(0, 27%, 49%);">
+        <div class="outer" style="background: #4976ff;">
             <StationWheel  stationsData={stationsData}/>
         </div>
     {:else if selectedRegion === "Test2"}
-        <div class="outer" style="background: hsl(165, 44%, 59%)">
+        <div class="outer" style="background: hsl(0, 27%, 49%);">
             <StationWheel  stationsData={stationsData}/>
         </div>
     {:else}
@@ -61,9 +57,10 @@
 
     
     .outer {
-        /* background: hsl(165, 44%, 59%) !important; */
+        /* background: hsl(165, 44%, 59%); */
         /* background-image: none; */ 
 
         padding: 7px;
+        
     }
 </style>

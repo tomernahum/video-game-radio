@@ -4,7 +4,7 @@ import nonStopPopLogo from "$lib/assets/non-stop-pop-logo.png";
 import nonStopPop2 from "$lib/assets/nonstoppop.jpg";
 import none from "$lib/assets/none.png";
 import none2 from "$lib/assets/none.jpg";
-
+import background1 from "$lib/assets/background1.webp"
 
 
 export const validRegionNames = ["Test1", "Test2"] as const
@@ -15,6 +15,9 @@ export type StationData = {
     logo: string
 }
 
+export function getBackground(regionName:RegionName) {
+    return background1;
+}
 
 
 

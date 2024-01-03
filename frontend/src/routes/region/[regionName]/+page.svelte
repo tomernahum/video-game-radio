@@ -7,7 +7,12 @@
 
     // $: selectedRegion = data.regionName
     
+    
+    //todo add background
+
 </script>
 
 <Page selectedRegion={data.regionName}/>
+
+
 
